@@ -1,0 +1,14 @@
+.ms_container {
+    width: 600px;
+    height: 300px;
+    object-fit: cover;
+    margin: 20px auto;
+}
+
+.ms_container img {
+    width: 100%;
+}
+
+.ms_color {
+    color: red;
+}

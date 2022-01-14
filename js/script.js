@@ -5,29 +5,50 @@ new Vue({
         immagini: [
             {
                 name: 1,
-                image: 'https://unsplash.it/300/300?image=12',
+                image: 'https://unsplash.it/600/300?image=12',
             },
             {
                 name: 2,
-                image: 'https://unsplash.it/300/300?image=22',
+                image: 'https://unsplash.it/600/300?image=22',
             },
             {
                 name: 3,
-                image: 'https://unsplash.it/300/300?image=32',
+                image: 'https://unsplash.it/600/300?image=32',
             },
             {
                 name: 4,
-                image: 'https://unsplash.it/300/300?image=42',
+                image: 'https://unsplash.it/600/300?image=42',
             },
             {
                 name: 5,
-                image: 'https://unsplash.it/300/300?image=52',
+                image: 'https://unsplash.it/600/300?image=52',
+            },
+        ],
+        palline: [
+            {
+                numero: 1,
+            },
+            {
+                numero: 2,
+            },
+            {
+                numero: 3,
+            },
+            {
+                numero: 4,
+            },
+            {
+                numero: 5,
             },
         ],
         time: 0,
     },
     methods: {
-
+        addColor: function() {
+            if (this.immagini.name === this.palline.numero) {
+                this.palline.numero.className += " ms_color";
+            }
+        },
         automaticSlide: function() {
             let tempo = this
             this.timer = setInterval(function() {
@@ -40,6 +61,7 @@ new Vue({
             if (this.currentCounterIndex > this.immagini.length - 1) {
                 this.currentCounterIndex = 0;
             }
+
         },
         prevSlide: function() {
             this.currentCounterIndex--;
@@ -48,9 +70,11 @@ new Vue({
                 this.currentCounterIndex = this.immagini.length - 1;
             }
         },
-        
+        addColor: function() {
+
+        }
     },
     mounted: function() {
         this.automaticSlide();
-      }
+      },
 })
