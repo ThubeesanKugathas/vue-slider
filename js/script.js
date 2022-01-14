@@ -27,26 +27,30 @@ new Vue({
         time: 0,
     },
     methods: {
-        // automaticSlide: function() {
-        //     let tempo = this
-        //     this.timer = setInterval(function() {
-        //       tempo.nextSlide();
-        //     }, 2000);
-        //   },
+
+        automaticSlide: function() {
+            let tempo = this
+            this.timer = setInterval(function() {
+              tempo.nextSlide();
+            }, 2000);
+          },
         nextSlide: function() {
             this.currentCounterIndex++;
            
-            if (this.currentCounterIndex > this.immagini.lenght - 1) {
+            if (this.currentCounterIndex > this.immagini.length - 1) {
                 this.currentCounterIndex = 0;
             }
         },
         prevSlide: function() {
             this.currentCounterIndex--;
 
-            // if (this.currentCounterIndex < 0) {
-            //     this.currentCounterIndex = this.immagini.lenght - 1;
-            // }
+            if (this.currentCounterIndex < 0) {
+                this.currentCounterIndex = this.immagini.length - 1;
+            }
         },
         
-    }
+    },
+    mounted: function() {
+        this.automaticSlide();
+      }
 })
