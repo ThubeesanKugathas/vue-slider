@@ -49,7 +49,7 @@ new Vue({
             }
         },
     },
-    // mounted: function() {
-    //     this.automaticSlide();
-    //   },
+    mounted: function() {
+        this.automaticSlide();
+      },
 })
