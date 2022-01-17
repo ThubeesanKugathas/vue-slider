@@ -16,11 +16,14 @@
 
         <div class="ms_container position-relative">
             <img :src="immagini[currentCounterIndex].image" :alt="immagini[currentCounterIndex].name">
-            <div class="position-absolute top-50 start-0 translate-middle-y" @click="prevSlide">PREV</div>
-            <div class="position-absolute top-50 end-0 translate-middle-y" @click="nextSlide">NEXT</div>
+            <div class="position-absolute top-50 start-0 translate-middle-y ms_prev" @click="prevSlide"><i class="fas fa-arrow-left"></i></div>
+            <div class="position-absolute top-50 end-0 translate-middle-y ms_next" @click="nextSlide"><i class="fas fa-arrow-right"></i></div>
+           
+            <div class="position-absolute bottom-0 start-50 translate-middle-x">
+                <i v-for="(dots, i) in immagini" class="fas fa-circle" :class="['dots', i === currentCounterIndex ? 'ms_active' : 'ms_non-active']"></i>
+            </div>
         </div>
-               
-        <i v-for="pallina in palline" class="fas fa-circle" :class="addColor()"></i>
+        
 
     </div>
 
