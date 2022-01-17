@@ -14,11 +14,13 @@
 <body>
     <div id="app">
 
+        <!-- mouseover e mouseleave con metodi -->
         <div class="ms_container position-relative" @mouseover="mouseOver" @mouseleave="mouseLeave" >
             <img :src="immagini[currentCounterIndex].image" :alt="immagini[currentCounterIndex].name" >
             <div class="position-absolute top-50 start-0 translate-middle-y ms_prev" @click="prevSlide"><i class="fas fa-arrow-left"></i></div>
             <div class="position-absolute top-50 end-0 translate-middle-y ms_next" @click="nextSlide"><i class="fas fa-arrow-right"></i></div>
            
+            <!-- creare i dot basandoci all'array degli oggetti delle immagini e creare un if nel v-bind:class -->
             <div class="position-absolute bottom-0 start-50 translate-middle-x">
                 <i v-for="(dots, i) in immagini" class="fas fa-circle" :class="['dots', i === currentCounterIndex ? 'ms_active' : 'ms_non-active']"></i>
             </div>

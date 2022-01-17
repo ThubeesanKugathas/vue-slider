@@ -49,6 +49,7 @@ new Vue({
                 this.currentCounterIndex = this.immagini.length - 1;
             }
         },
+        // sfruttare un booleano per far partire l'hover
         mouseOver: function() {
             this.hover = true;
             clearInterval(this.timer);
