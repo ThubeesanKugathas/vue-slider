@@ -57,6 +57,9 @@ new Vue({
         mouseLeave: function() {
             this.hover = false;
             this.automaticSlide();
+        },
+        dotClick: function(i) {
+            this.currentCounterIndex = i; 
         }
     },
     mounted: function() {

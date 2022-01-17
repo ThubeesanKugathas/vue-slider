@@ -22,7 +22,7 @@
            
             <!-- creare i dot basandoci all'array degli oggetti delle immagini e creare un if nel v-bind:class -->
             <div class="position-absolute bottom-0 start-50 translate-middle-x">
-                <i v-for="(dots, i) in immagini" class="fas fa-circle" :class="['dots', i === currentCounterIndex ? 'ms_active' : 'ms_non-active']"></i>
+                <i @click="dotClick(i)" v-for="(dots, i) in immagini" class="fas fa-circle ms_dots" :class="['dots', i === currentCounterIndex ? 'ms_active' : '']"></i>
             </div>
         </div>
         

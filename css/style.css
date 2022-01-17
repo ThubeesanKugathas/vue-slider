@@ -9,12 +9,12 @@
     width: 100%;
 }
 
-.ms_active {
-    color: #fff;
+.ms_dots {
+    color: #aaa;
 }
 
-.ms_non-active {
-    color: #aaa;
+.ms_active {
+    color: #fff;
 }
 
 .ms_prev,
