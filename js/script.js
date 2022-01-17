@@ -24,7 +24,8 @@ new Vue({
                 image: 'https://unsplash.it/600/300?image=52',
             },
         ],
-        time: 0,
+        timer: 0,
+        hover: false
     },
     methods: {
         automaticSlide: function() {
@@ -48,6 +49,14 @@ new Vue({
                 this.currentCounterIndex = this.immagini.length - 1;
             }
         },
+        mouseOver: function() {
+            this.hover = true;
+            clearInterval(this.timer);
+        },
+        mouseLeave: function() {
+            this.hover = false;
+            this.automaticSlide();
+        }
     },
     mounted: function() {
         this.automaticSlide();
